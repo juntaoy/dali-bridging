@@ -20,7 +20,7 @@ def get_training_examples(config, test_fold=-1):
     example = json.loads(line)
     example['main_train'] = True
     cnt += 1
-    if i % num_fold != test_fold:
+    if num_fold <=1 or i % num_fold != test_fold:
       train_examples.append(example)
   print("Find %d documents from %s use %d" % (cnt, config['train_path'], len(train_examples)))
 
