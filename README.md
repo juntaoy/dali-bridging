@@ -1,11 +1,11 @@
-# Named Entity Recognition as Dependency Parsing
+# Multi-task Learning Based Neural Bridging Reference Resolution
 
 ## Introduction
 This repository contains code introduced in the following paper:
  
-**[Named Entity Recognition as Dependency Parsing](https://arxiv.org/abs/2005.07150)**  
-Juntao Yu, Bernd Bohnet and Massimo Poesio  
-In *Proceedings of the 2020 Annual Conference of the Association for Computational Linguistics (ACL)*, 2020
+**[Multi-task Learning Based Neural Bridging Reference Resolution](https://arxiv.org/abs/2003.03666)**  
+Juntao Yu and Massimo Poesio 
+In *Proceedings of he 28th International Conference on Computational Linguistics (COLING)*, 2020
 
 ## Setup Environments
 * The code is written in Python 2, the compatibility to Python 3 is not guaranteed.  
@@ -14,22 +14,23 @@ In *Proceedings of the 2020 Annual Conference of the Association for Computation
 * You also need to download context-independent word embeddings such as fasttext or GloVe embeddings that required by the system.
 
 ## To use a pre-trained model
-* Pre-trained models can be download from [this link](https://www.dropbox.com/s/vx30kijnvio1f4k/acl2020%20best%20models.zip?dl=0). We provide all nine pre-trained models reported in our paper.
+* Pre-trained models can be download from [this link](https://www.dropbox.com/s/3yu3qoyv3wf9j54/best_model_rst_coling2020_dali_bridging.zip?dl=0). We provide pre-trained models for ARRAU RST reported in our paper, if you need other models please contact me.
 * Choose the model you want to use and copy them to the `logs/` folder.
 * Modifiy the *test_path* accordingly in the `experiments.conf`:
    * the *test_path* is the path to *.jsonlines* file, each line of the *.jsonlines* file is a batch of sentences and must in the following format:
    
    ```
-  {"doc_key": "batch_01", 
-  "ners": [[[0, 0, "PER"], [3, 3, "GPE"], [5, 5, "GPE"]], 
-  [[3, 3, "PER"], [10, 14, "ORG"], [20, 20, "GPE"], [20, 25, "GPE"], [22, 22, "GPE"]], 
-  []], 
-  "sentences": [["Anwar", "arrived", "in", "Shanghai", "from", "Nanjing", "yesterday", "afternoon", "."], 
-  ["This", "morning", ",", "Anwar", "attended", "the", "foundation", "laying", "ceremony", "of", "the", "Minhang", "China-Malaysia", "joint-venture", "enterprise", ",", "and", "after", "that", "toured", "Pudong", "'s", "Jingqiao", "export", "processing", "district", "."], 
-  ["(", "End", ")"]]}
+   {
+  "clusters": [[[0,0],[5,5]],[[2,3],[7,8]], Coreference
+  "bridging_pairs"[[[14,15],[2,3]],....] Bridging 
+  "doc_key": "nw",
+  "sentences": [["John", "has", "a", "car", "."], ["He", "washed", "the", "car", "yesteday","."],["How","is","the", "left", "wheel","?"]],
+  "speakers": [["sp1", "sp1", "sp1", "sp1", "sp1"], ["sp1", "sp1", "sp1", "sp1", "sp1","sp1"],["sp2","sp2","sp2","sp2","sp2","sp2","sp2"]] Optional
+  }
   ```
   
-  * Each of the sentences in the batch corresponds to a list of NEs stored under `ners` key, if some sentences do not contain NEs use an empty list `[]` instead.
+  * For coreference the mentions only contain two properties \[start_index, end_index\] the indices are counted in document level and both inclusive.
+  * For bridging pairs, each pair contains two mentions the first one is the anaphora and the second one is the antecedent.
 * Then use `python evaluate.py config_name` to start your evaluation
 
 ## To train your own model
