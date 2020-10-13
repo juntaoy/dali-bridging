@@ -21,11 +21,11 @@ In *Proceedings of he 28th International Conference on Computational Linguistics
    
    ```
    {
-  "clusters": [[[0,0],[5,5]],[[2,3],[7,8]], Coreference
-  "bridging_pairs"[[[14,15],[2,3]],....] Bridging 
+  "clusters": [[[0,0],[5,5]],[[2,3],[7,8]], #Coreference
+  "bridging_pairs"[[[14,15],[2,3]],....] #Bridging 
   "doc_key": "nw",
   "sentences": [["John", "has", "a", "car", "."], ["He", "washed", "the", "car", "yesteday","."],["How","is","the", "left", "wheel","?"]],
-  "speakers": [["sp1", "sp1", "sp1", "sp1", "sp1"], ["sp1", "sp1", "sp1", "sp1", "sp1","sp1"],["sp2","sp2","sp2","sp2","sp2","sp2","sp2"]] Optional
+  "speakers": [["sp1", "sp1", "sp1", "sp1", "sp1"], ["sp1", "sp1", "sp1", "sp1", "sp1","sp1"],["sp2","sp2","sp2","sp2","sp2","sp2","sp2"]] #Optional
   }
   ```
   
