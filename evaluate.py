@@ -49,9 +49,6 @@ if __name__ == "__main__":
     print("Final Bridging F1: {:.2f}%".format(bridging_f1 * 100))
     print("Final Bridging recall: {:.2f}%".format(bridging_recall * 100))
     print("Final Bridging precision: {:.2f}%".format(bridging_precision * 100))
-    print('%.1f&%.1f&\\bf %.1f&%.1f&%.1f&\\bf %.1f'%(bridging_anaphora_precision*100,bridging_anaphora_recall*100,bridging_anaphora_f1*100,
-                                            bridging_precision*100,bridging_recall*100,bridging_f1*100))
-
   else:
     #evaluate on test set
     config['eval_path'] = config['test_path']
