@@ -3,7 +3,7 @@
 ## Introduction
 This repository contains code introduced in the following paper:
  
-**[Multi-task Learning Based Neural Bridging Reference Resolution](https://arxiv.org/abs/2003.03666)**  
+**[Multi-task Learning Based Neural Bridging Reference Resolution](https://www.aclweb.org/anthology/2020.coling-main.315/)**  
 Juntao Yu and Massimo Poesio 
 In *Proceedings of he 28th International Conference on Computational Linguistics (COLING)*, 2020
 
