@@ -14,7 +14,7 @@ In *Proceedings of he 28th International Conference on Computational Linguistics
 * You also need to download context-independent word embeddings such as fasttext or GloVe embeddings that required by the system.
 
 ## To use a pre-trained model
-* Pre-trained models can be download from [this link](https://www.dropbox.com/s/3yu3qoyv3wf9j54/best_model_rst_coling2020_dali_bridging.zip?dl=0). We provide pre-trained models for ARRAU RST reported in our paper, if you need other models please contact me.
+* Pre-trained models can be download from [this link](https://essexuniversity.box.com/s/epxex2u183mptav3tsn0d1fq9pyykvqq). We provide pre-trained models for ARRAU RST reported in our paper, if you need other models please contact me.
 * Choose the model you want to use and copy them to the `logs/` folder.
 * Modifiy the *test_path* accordingly in the `experiments.conf`:
    * the *test_path* is the path to *.jsonlines* file, each line of the *.jsonlines* file is a batch of sentences and must in the following format:
